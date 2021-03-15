@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  cadmin:
+    restart: always
+    build: ./Catalog_Admin
+    command: /app/Catalog_Admin/api/main
+    ports:
+      - 4001:4001
+  cuser:
+    restart: always
+    build: ./Catalog_User
+    command: /app/Catalog_User/api/main
+    ports:
+      - 4000:4000
+  admin:
+    restart: always
+    build: ./Manager_Admin
+    command: /app/Manager_Admin/api/main
+    ports:
+      - 4002:4002
+
+
